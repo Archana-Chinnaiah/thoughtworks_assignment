@@ -1,21 +1,21 @@
 def outer(func):
     def fn():
-        print('outer')
+        print('outer',end="")
         func()
-        print('outer')
+        print('outer',end='')
     return fn
 
 
 def inner(func):
     def fn():
-        print('inner')
+        print('inner',end='')
         func()
-        print('inner')
+        print('inner',end='')
     return fn
 
 
 @outer
 @inner
 def string():
-        print("inside")
+        print("inside",end='')
 string()
