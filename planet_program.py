@@ -13,7 +13,6 @@ class Planets:
         days=0
         days=days+(self.days)
         return days
-#large=max(p1.dia,p2.dia,p3.dia,p4.dia,p5.dia,p6.dia,p7.dia,p8.dia)
     
 def large_planet(*planets):
     large=planets[0].dia
@@ -24,10 +23,6 @@ def large_planet(*planets):
         if i.dia ==large:
            print("the largest planet is: ",i.name) 
         
-    
-    
-     
-
 
 
 mer=Planets("MERCURY",4879,0,88)
