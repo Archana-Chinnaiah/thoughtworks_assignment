@@ -30,6 +30,5 @@ c=add_times(a,b)
 c.display_time()
 d=time_difference(a,b)
 d.display_time()
-#add_times(a,b)
 c.display_minutes()
             
