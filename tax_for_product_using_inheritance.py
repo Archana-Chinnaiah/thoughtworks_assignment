@@ -8,8 +8,7 @@ class Product:
     def normal_tax(self):
          if(self.price>500):
              tax=(float(self.price)*0.05)
-             return tax
-         
+             return tax         
          else:
              tax=(float(self.price)*0.02)
              return tax
@@ -35,11 +34,13 @@ class TextileProduct(Product):
         tax=new_tax+(float(self.price)*0.01)
         return tax
         
-
+         ''' GETTING USER INPUT '''
 id=int(input("Enter the ID for the Product: "))
 name=input("Enter the NAME for the Product: ")
 price=float(input("Enter the PRICE for the Product: "))
 category=input("Enter the CATEGORY for the Product: ")
+
+
 if(category.lower()=="home needs" or category.lower()=="produce"):
     product=Product(id,name,price,category)
     print("The tax for the product",name,"is",product.normal_tax())
