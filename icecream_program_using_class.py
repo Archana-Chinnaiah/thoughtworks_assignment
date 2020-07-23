@@ -25,6 +25,8 @@ vanilla=10
 choco_chips=5
 caramel=10
 nuts=15
+print(" \t \t LIST OF ICECREAM FLAVOURS,TYPES AND TOPPINGS")        
+print("FLAVOURS \tTYPES \tTOPPINGS \nchocolate \tstick \tchocoChips \nvanilla \tcone \tcaramel \nstrawberry \tcup \tnuts")
 f=input("enter the flavour: ")
 t=input("Enter the type: ")
 top=input("if you need toppings,Enter the topping: else enter 0: ")
