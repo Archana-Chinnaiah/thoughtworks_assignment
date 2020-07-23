@@ -6,7 +6,7 @@ class IceCream:
         return self.flavours*self.types
 
 class Chocolate(IceCream):
-    def __init__(self,flavours,types,top=0):
+    def __init__(self,flavours,types,top):
         IceCream.__init__(self,flavours,types)
         self.top=top
     def display_toppings(self):   
