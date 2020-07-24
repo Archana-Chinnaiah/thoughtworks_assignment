@@ -1,29 +1,37 @@
 class IceCream:    
-    def __init__(self,flavours_types,topping):
-        self.flavours_types=flavours_types
-        self.topping=topping
+    def __init__(self,flavours,types):
+        self.flavours=flavours
+        self.types=types
     def display_cost(self):
-        print("The cost of ice cream is: ",ice_cream(self.flavours_types,self.topping))
+        return self.flavours*self.types
 
-def ice_cream(flavour_type,top):
-    list=flavour_type.split(" ")
-    if(top.lower()=='no'):
-        return cost_of_flavours.get(list[0])*cost_of_types.get(list[1])
-    return cost_of_flavours.get(list[0])*cost_of_types.get(list[1])*cost_of_toppings.get(top)
+class Chocolate(IceCream):
+    def __init__(self,flavours,types,top):
+        IceCream.__init__(self,flavours,types)
+        self.top=top
+    def display_toppings(self):   
+        if((self.top)==0):
+            return 1
+        else:
+            return (self.top)
 
-cost_of_types={'stick':10,'cone':10,'cup':15}
-cost_of_flavours={'strawberry':15,'chocolate':10,'vanilla':10}
-cost_of_toppings={'choco_chips':5,'caramel':4,'nuts':15}
 
-
-print(" \t \t LIST OF ICECREAM FLAVOURS,TYPES AND TOPPINGS")        
+stick=10
+cone=10
+cup=15
+strawberry=15
+chocolate=10
+vanilla=10
+choco_chips=5
+caramel=10
+nuts=15
+print(" \t \t*** LIST OF ICECREAM FLAVOURS,TYPES AND TOPPINGS***\n")        
 print("FLAVOURS \tTYPES \tTOPPINGS \nchocolate \tstick \tchocoChips \nvanilla \tcone \tcaramel \nstrawberry \tcup \tnuts")
-flavour_and_type=input("\nEnter the flavour and Type of an icecream: ")
-topping=input("Whether you need toppings,if 'yes',enter the toppings: ")
-
-
-ice=IceCream(flavour_and_type,topping)
-ice.display_cost()
+f=input("\nenter the flavour: ")
+t=input("Enter the type: ")
+top=input("if you need toppings,Enter the topping: else enter 0: ")
+c=Chocolate(f,t,top)
+print("The cost of IceCream:",c.display_toppings()*c.display_cost())
 
         
         
