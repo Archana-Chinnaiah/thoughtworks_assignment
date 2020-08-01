@@ -90,6 +90,7 @@ display_category()
 category_name=get_category()
 ac=get_ac_need()
 
+
 print('\nCAB \tKM-RANGE \tPRICE PER KM')
 CabCategory.price_menu_list(category_of_vehicles,category_name,ac)
 

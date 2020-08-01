@@ -1,3 +1,4 @@
+import re
 class Owner:
     def __init__(self,name,age,license_number,license_validity):
         self.__name=name
@@ -81,14 +82,26 @@ class Car:
     def get_owner(self):
         return self.__owner
 
-owner_name=input("Enter the Owner Name:")
+owner_name=input("Enter the Owner Name:").upper()
 owner_age=input("Enter the Owner Age:")
-owner_license_number=input("Enter the Owner License Number:")
-owner_license_validity=input("Enter the Owner License Validity:")
+while True:
+    owner_license_number=input("Enter the Owner License Number:")
+    if(re.match(r'(^(([A-Z]{2}[0-9]{2})( )|([A-Z]{2}-[0-9]{2}))((19|20)[0-9][0-9])[0-9]{7}$)',owner_license_number)):
+        break
+    else:
+        print("INVALID LICENSE NUMBER")
+
+while True:
+    owner_license_validity=input("Enter the Owner License Validity in dd/mm/yyyy:")
+    if(re.match(r'(^(3[01]|[12][0-9]|0[1-9])/(1[0-2]|0[1-9])/[0-9]{4}$)',owner_license_validity)):
+        break
+    else:
+        print("INVALID LICENSE")        
+
 car_category=input("Enter the Car category (if MAX is 4 people -- MICRO. else if Max is 10 people --XL) -: ")
 car_number=input("Enter the Car Number:")
 car_color=input("Enter the Car Color:")
-car_company=input("Enter the Car Company:")
+car_company=input("Enter the Car Company:").title()
 car_model=input("Enter the Car Model:")
 
 car=Car(car_category,car_number,car_color,car_company,car_model,owner_name,owner_age,owner_license_number,owner_license_validity)
@@ -103,32 +116,7 @@ print("Owner age- ",car.get_owner().get_age())
 print("Owner license number- ",car.get_owner().get_l_number())
 print("Owner license validity- ",car.get_owner().get_l_validity())
 
-#OUTPUT
 
-'''
-Enter the Owner Name:KATHIR
-Enter the Owner Age:20
-Enter the Owner License Number:AB394017
-Enter the Owner License Validity:12/28
-Enter the Car category (if MAX is 4 people -- MICRO. else if Max is 10 people --XL) -: XL
-Enter the Car Number:TN 63 SA 1521
-Enter the Car Color:WHITE
-Enter the Car Company:SUZUKI
-Enter the Car Model:M81
-
-		           ****CAR DETAILS****
-
-Car category-  XL
-Car number-  TN 63 SA 1521
-Car color-  WHITE
-Car company-  SUZUKI
-Car model-  M81
-Owner name-  KATHIR
-Owner age-  20
-Owner license number-  AB394017
-Owner license validity-  12/28
-
-'''
         
 
         
