@@ -1,0 +1,21 @@
+create table cabcategory(cab_id numeric,cab_name text,max_people numeric);
+
+insert into cabcategory (cab_id,cab_name,max_people) values (1,'Auto',3),(2,'Micro',4),(3,'XL',10);
+
+
+create table ac_option(cab_id numeric,ac_need text,km_range text,price_per_km numeric);
+
+insert into ac_option (cab_id,ac_need,km_range,price_per_km) 
+values(1,'yes','upto 15 km',10),(1,'yes','15 - 30 km',8),(1,'yes','above 30 km',15),
+(2,'yes','upto 15 km',12),(2,'yes','above 15 km',10),(2,'no','upto 15 km',14),(2,'no','above 15 km',12),
+(3,'yes','upto 15 km',14),(3,'yes','above 15 km',14),(3,'no','upto 15 km',15),(3,'no','above 15 km',15);
+
+select * from cabcategory;
+
+select * from ac_option;
+
+
+
+select c.cab_id,c.cab_name,a.km_range,a.price_per_km from cabcategory c inner join ac_option a on c.cab_id=a.cab_id
+
+where c.cab_id=3 and a.ac_need='no';
